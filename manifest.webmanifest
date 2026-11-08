@@ -1,13 +1,11 @@
 {
-  "name": "IAI — Knowledge Without Borders",
+  "name": "Islamic AI",
   "short_name": "IAI",
-  "description": "A multilingual AI learning assistant prototype.",
-  "start_url": "./index.html",
+  "description": "Knowledge Without Borders",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7faff",
-  "theme_color": "#ffffff",
-  "icons": [
-    {"src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
-  ]
+  "background_color": "#f5f8fc",
+  "theme_color": "#1769d2",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }

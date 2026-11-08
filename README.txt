@@ -1,17 +1,19 @@
-IAI Prototype v0.2 — PWA-ready package
+ISLAMIC AI (IAI) — Prototype v0.3 Fixed
 
-This version includes:
-- Responsive English/Amharic website prototype
-- Crescent SVG app icon
-- Web app manifest
-- Service worker for caching/offline shell after first successful visit
+FILES
+- index.html: responsive website interface with English/Amharic language switch.
+- manifest.webmanifest: installable web app settings.
+- service-worker.js: offline shell cache; cache name updated to v3.
+- icon.svg: crescent logo.
+- README.txt: this file.
 
-IMPORTANT:
-- This is still a front-end prototype. No real AI model, accounts, payments, database,
-  or server connection is included.
-- The chat is a demo only; it does not send questions to a server.
-- Installability and offline caching require the files to be hosted over HTTPS
-  (localhost is also allowed for development). Opening index.html directly from
-  Downloads will show the page but will not enable PWA installation/service workers.
-- Hosting free tiers and terms can change. No paid service is required to test locally.
-- Never place secret API keys in HTML or browser JavaScript.
+UPDATE ON GITHUB
+1. Open the existing iai-website repository.
+2. Choose Add file > Upload files.
+3. Upload these five extracted files and confirm replacing files with the same names.
+4. Commit changes to the main branch.
+5. Wait for GitHub Pages to finish deploying.
+
+IMPORTANT
+This is only a front-end prototype. Ask IAI now displays a clear demo message, but it does NOT generate real AI answers. No backend, account system, database, or payment service is connected.
+For the installed app, close and reopen it after deployment. If the old screen remains, open the website in Chrome and refresh; the service worker cache is versioned v3.
