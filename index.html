@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>IAI — Knowledge Without Borders</title>
+<style>
+:root{--blue:#1769d2;--navy:#102b50;--pale:#eef5ff;--ink:#172338;--muted:#68778d;--line:#e4eaf2;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#f7faff;color:var(--ink);font-family:Inter,Arial,sans-serif}
+header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:2}
+.brand{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.crescent{width:35px;height:35px;border-radius:50%;background:var(--blue);position:relative;display:inline-block}
+.crescent:after{content:"";position:absolute;width:29px;height:29px;border-radius:50%;background:white;left:11px;top:-4px}
+nav{display:flex;gap:24px;align-items:center}nav a{color:#52627a;text-decoration:none;font-size:14px}
+button{cursor:pointer;border:0;font:inherit}.lang{background:#f0f5fc;border:1px solid var(--line);padding:9px 13px;border-radius:10px;color:var(--navy)}
+main{max-width:1100px;margin:0 auto;padding:64px 24px 50px}
+.hero{text-align:center;max-width:800px;margin:0 auto 42px}
+.badge{display:inline-block;background:#e8f1ff;color:var(--blue);padding:8px 14px;border-radius:30px;font-size:13px;font-weight:700}
+h1{font-size:clamp(38px,6vw,62px);line-height:1.08;letter-spacing:-2px;margin:22px 0 14px;color:var(--navy)}
+.subtitle{font-size:18px;line-height:1.65;color:var(--muted);margin:0 auto 28px;max-width:650px}
+.chatbox{background:#fff;border:1px solid #dfe8f4;box-shadow:0 18px 55px #173c6c12;border-radius:20px;padding:15px;max-width:780px;margin:0 auto}
+textarea{width:100%;border:0;resize:vertical;min-height:74px;padding:12px;font:16px/1.5 inherit;outline:none;color:var(--ink)}
+.chatrow{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding:12px 4px 0}
+.hint{font-size:12px;color:#8a96a8}.send{background:var(--blue);color:#fff;border-radius:12px;padding:11px 19px;font-weight:700}
+.quick{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px auto 0}
+.quick button{background:#fff;border:1px solid var(--line);border-radius:30px;padding:10px 15px;color:#45566f;font-size:13px}
+.answer{display:none;text-align:left;margin:18px auto 0;max-width:780px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;line-height:1.6;white-space:pre-wrap}
+.section-title{text-align:center;color:var(--navy);font-size:25px;margin:65px 0 22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.icon{width:42px;height:42px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-size:21px}
+.card h3{margin:15px 0 7px;color:var(--navy)}.card p{color:var(--muted);font-size:14px;line-height:1.55;margin:0}
+.note{margin:30px auto 0;max-width:780px;background:#fff8e8;border:1px solid #f1dfb8;color:#71531b;padding:14px 17px;border-radius:12px;font-size:13px;line-height:1.5}
+footer{text-align:center;color:#8a96a8;padding:25px;border-top:1px solid var(--line);font-size:12px}
+@media(max-width:700px){header{padding:0 18px}nav a{display:none}main{padding-top:42px}.grid{grid-template-columns:1fr}.subtitle{font-size:16px}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><span class="crescent" aria-hidden="true"></span><span>IAI</span></div>
+  <nav><a href="#features" data-en="Features" data-am="ባህሪያት">Features</a><a href="#islamic" data-en="Islamic Knowledge" data-am="እስላማዊ እውቀት">Islamic Knowledge</a><button class="lang" id="langBtn">አማርኛ</button></nav>
+</header>
+<main>
+  <section class="hero">
+    <span class="badge" data-en="A new way to explore knowledge" data-am="እውቀትን ለመፈለግ አዲስ መንገድ">A new way to explore knowledge</span>
+    <h1 data-en="Knowledge Without Borders" data-am="ድንበር የሌለው እውቀት">Knowledge Without Borders</h1>
+    <p class="subtitle" data-en="Ask questions, learn new things, and explore Islamic knowledge — all in one place." data-am="ጥያቄዎችን ይጠይቁ፣ አዳዲስ ነገሮችን ይማሩ፣ እስላማዊ እውቀትንም ይመርምሩ — ሁሉንም በአንድ ቦታ።">Ask questions, learn new things, and explore Islamic knowledge — all in one place.</p>
+    <div class="chatbox">
+      <textarea id="prompt" placeholder="Ask anything..." aria-label="Ask anything"></textarea>
+      <div class="chatrow"><span class="hint" data-en="Prototype preview · Demo answers only" data-am="የሙከራ ስሪት · የማሳያ መልሶች ብቻ">Prototype preview · Demo answers only</span><button class="send" id="sendBtn" data-en="Ask IAI →" data-am="IAIን ጠይቅ →">Ask IAI →</button></div>
+    </div>
+    <div class="quick">
+      <button data-prompt-en="Explain a topic simply" data-prompt-am="አንድን ርዕስ በቀላሉ አብራራልኝ">✦ <span data-en="Learn something" data-am="አዲስ ነገር ተማር">Learn something</span></button>
+      <button data-prompt-en="Help me write a document" data-prompt-am="ሰነድ እንድጽፍ እርዳኝ">▤ <span data-en="Write" data-am="ጻፍ">Write</span></button>
+      <button data-prompt-en="I have an Islamic question" data-prompt-am="እስላማዊ ጥያቄ አለኝ">☾ <span data-en="Islamic question" data-am="እስላማዊ ጥያቄ">Islamic question</span></button>
+    </div>
+    <div class="answer" id="answer" role="status"></div>
+  </section>
+
+  <h2 class="section-title" id="features" data-en="One assistant, many possibilities" data-am="አንድ ረዳት፣ ብዙ አጋጣሚዎች">One assistant, many possibilities</h2>
+  <section class="grid">
+    <article class="card"><div class="icon">✦</div><h3 data-en="AI Chat" data-am="AI ውይይት">AI Chat</h3><p data-en="Get help understanding topics, brainstorming, and learning." data-am="ርዕሶችን ለመረዳት፣ ሀሳብ ለማመንጨትና ለመማር እገዛ ያግኙ።">Get help understanding topics, brainstorming, and learning.</p></article>
+    <article class="card" id="islamic"><div class="icon">☾</div><h3 data-en="Islamic Knowledge" data-am="እስላማዊ እውቀት">Islamic Knowledge</h3><p data-en="A dedicated space for Qur’an, Hadith, and scholarly learning with careful source checking." data-am="ለቁርአን፣ ሐዲስና የዑለማዎች ትምህርት የተዘጋጀ ክፍል፤ ምንጮችን በጥንቃቄ ለማረጋገጥ።">A dedicated space for Qur’an, Hadith, and scholarly learning with careful source checking.</p></article>
+    <article class="card"><div class="icon">🌐</div><h3 data-en="Languages" data-am="ቋንቋዎች">Languages</h3><p data-en="English and Amharic for the first release, with more languages planned." data-am="በመጀመሪያው ስሪት እንግሊዝኛና አማርኛ፤ በኋላም ተጨማሪ ቋንቋዎች።">English and Amharic for the first release, with more languages planned.</p></article>
+  </section>
+  <div class="note" data-en="Important: This is a front-end prototype, not a connected AI service. The chat shows a demo notice and does not send your questions to a server. Do not enter private or sensitive information." data-am="ማስታወሻ፦ ይህ የድረገጽ መልክ ናሙና ነው፤ ከAI አገልግሎት ጋር ገና አልተገናኘም። ውይይቱ የማሳያ መልዕክት ብቻ ያሳያል፤ ጥያቄዎችዎን ወደ ሰርቨር አይልክም። የግል ወይም ሚስጥራዊ መረጃ አያስገቡ።">Important: This is a front-end prototype, not a connected AI service. The chat shows a demo notice and does not send your questions to a server. Do not enter private or sensitive information.</div>
+</main>
+<footer>© 2026 IAI · Knowledge Without Borders · Prototype v0.1</footer>
+<script>
+let lang='en';
+const translations={
+ en:{placeholder:'Ask anything...',empty:'Please type a question first.',demo:'Thanks for trying IAI! This is the first visual prototype. The AI engine is not connected yet, so this is a demo response only. Your next development step is to connect a secure AI service and verify Islamic references before publishing.'},
+ am:{placeholder:'ማንኛውንም ጥያቄ ይጠይቁ...',empty:'እባክዎ መጀመሪያ ጥያቄ ያስገቡ።',demo:'IAIን ስለተጠቀሙ እናመሰግናለን! ይህ የመጀመሪያው የድረገጽ ናሙና ነው። የAI ሞተሩ ገና አልተገናኘም፤ ስለዚህ ይህ የማሳያ መልስ ብቻ ነው። ቀጣዩ ደረጃ ደህንነቱ የተጠበቀ AI አገልግሎት ማገናኘትና የእስላማዊ ምንጮችን ማረጋገጥ ነው።'}
+};
+function setLang(next){
+ lang=next;document.documentElement.lang=lang;
+ document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[lang]);
+ document.getElementById('langBtn').textContent=lang==='en'?'አማርኛ':'English';
+ document.getElementById('prompt').placeholder=translations[lang].placeholder;
+ document.getElementById('answer').style.display='none';
+}
+document.getElementById('langBtn').addEventListener('click',()=>setLang(lang==='en'?'am':'en'));
+document.getElementById('sendBtn').addEventListener('click',()=>{
+ const value=document.getElementById('prompt').value.trim(), box=document.getElementById('answer');
+ box.textContent=value?translations[lang].demo:translations[lang].empty;box.style.display='block';
+});
+document.querySelectorAll('[data-prompt-en]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.getElementById('prompt').value=btn.dataset['prompt'+(lang==='en'?'En':'Am')];
+ document.getElementById('prompt').focus();
+}));
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+}
+</script>
+</body></html>
